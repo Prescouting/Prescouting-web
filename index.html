@@ -52,6 +52,20 @@ h1{
     color:#999;
     margin-top:8px;
 }
+    .sources-btn{
+    margin-top:15px;
+    background:#00ff88;
+    color:#000;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.sources-btn:hover{
+    opacity:0.9;
+}
 </style>
 
 </head>
@@ -120,6 +134,10 @@ Journalist: ${item.journalist_score}
 |
 Confidence: ${item.confidence_score}
 </div>
+
+<button class="sources-btn">
+Ver fuentes
+</button>
 
 </div>
 `;
