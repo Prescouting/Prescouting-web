@@ -75,15 +75,15 @@ const supabaseUrl =
 const supabaseKey =
 'sb_publishable_u0fUf9P8rCmghW299oXuCA_8WwKsCXY';
 
-const supabase =
+const client =
 window.supabase.createClient(
-supabaseUrl,
-supabaseKey
+  supabaseUrl,
+  supabaseKey
 );
 
 async function loadRumours(){
 
-const { data, error } = await supabase
+const { data, error } = await client
 .from('probabilities')
 .select('*')
 .order('probability', { ascending:false });
