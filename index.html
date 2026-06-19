@@ -135,7 +135,9 @@ Journalist: ${item.journalist_score}
 Confidence: ${item.confidence_score}
 </div>
 
-<button class="sources-btn">
+<button
+class="sources-btn"
+onclick="showSources(${item.id})">
 Ver fuentes
 </button>
 
@@ -149,6 +151,38 @@ document.getElementById("rumours").innerHTML = html;
 }
 
 loadRumours();
+    async function showSources(rumourId){
+
+const { data, error } = await client
+.from('rumour_sources')
+.select(`
+source_title,
+source_url,
+impact_score
+`)
+.eq('rumour_id', rumourId)
+.order('impact_score', { ascending:false });
+
+if(error){
+alert('Error cargando fuentes');
+return;
+}
+
+let text = '';
+
+data.forEach(source => {
+
+text +=
+source.source_title +
+' (Impacto: ' +
+source.impact_score +
+')\n';
+
+});
+
+alert(text);
+
+}
 
 </script>
 
