@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,78 +8,176 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-body{
-    background:#0f1117;
-    color:white;
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:40px;
+
+*{
+    box-sizing:border-box;
 }
 
-h1{
+body{
+    background:#05070d;
+    color:white;
+    font-family:Inter,Arial,sans-serif;
+    margin:0;
+}
+
+.header{
+    padding:30px;
+    border-bottom:1px solid #1c2230;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:800;
+}
+
+.logo span{
     color:#00ff88;
-    margin-bottom:5px;
 }
 
 .subtitle{
-    color:#888;
-    margin-bottom:40px;
+    color:#8b8f98;
+    margin-top:10px;
+    font-size:20px;
+}
+
+.live{
+    color:#47d16c;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 30px;
+    border-bottom:1px solid #1c2230;
+}
+
+.hero h2{
+    font-size:54px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#8b8f98;
+    max-width:900px;
+    margin:auto;
+    line-height:1.6;
+    font-size:22px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:30px;
 }
 
 .card{
-    background:#181c24;
-    padding:20px;
-    border-radius:12px;
-    margin-bottom:15px;
-    border:1px solid #2a2f3a;
+    background:#090c14;
+    border:1px solid #1c2230;
+    margin-bottom:20px;
+    padding:25px;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .player{
-    font-size:20px;
-    font-weight:bold;
+    font-size:32px;
+    font-weight:700;
 }
 
 .club{
     color:#00ff88;
+    margin-top:6px;
+    font-size:22px;
 }
 
 .prob{
-    float:right;
-    font-size:24px;
-    font-weight:bold;
+    font-size:48px;
+    font-weight:800;
+    color:#4ade80;
 }
 
 .score{
-    color:#999;
-    margin-top:8px;
-}
-    .sources-btn{
     margin-top:15px;
+    color:#8b8f98;
+    font-size:18px;
+}
+
+.sources-btn{
+    margin-top:20px;
     background:#00ff88;
     color:#000;
     border:none;
-    padding:10px 16px;
+    padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
     font-weight:bold;
+    font-size:16px;
 }
 
 .sources-btn:hover{
     opacity:0.9;
 }
-</style>
 
+.footer{
+    text-align:center;
+    color:#666;
+    padding:40px;
+    border-top:1px solid #1c2230;
+    margin-top:50px;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>PRESCOUTING</h1>
+<div class="header">
+
+<div>
+<div class="logo">
+<span>PRES</span>COUTING
+</div>
+
 <div class="subtitle">
 Football Transfer Intelligence Platform
 </div>
+</div>
+
+<div class="live">
+🟢 LIVE
+</div>
+
+</div>
+
+<div class="hero">
+<h2>
+See the probability of a player joining your club.
+</h2>
+
+<p>
+Football transfer probabilities powered by journalist reliability,
+market signals and verified transfer intelligence.
+</p>
+</div>
+
+<div class="container">
 
 <div id="rumours">
-Cargando rumores...
+Loading transfer rumours...
+</div>
+
+</div>
+
+<div class="footer">
+PRESCOUTING • FOOTBALL TRANSFER INTELLIGENCE
 </div>
 
 <script>
@@ -91,8 +190,8 @@ const supabaseKey =
 
 const client =
 window.supabase.createClient(
-  supabaseUrl,
-  supabaseKey
+supabaseUrl,
+supabaseKey
 );
 
 async function loadRumours(){
@@ -116,22 +215,31 @@ data.forEach(item => {
 html += `
 <div class="card">
 
+<div class="card-top">
+
+<div>
+
 <div class="player">
 ${item.player_name}
-<span class="prob">
-${item.probability}%
-</span>
 </div>
 
 <div class="club">
 → ${item.destination_club}
 </div>
 
+</div>
+
+<div class="prob">
+${item.probability}%
+</div>
+
+</div>
+
 <div class="score">
 Heat: ${item.heat_score}
-|
+&nbsp;&nbsp;|&nbsp;&nbsp;
 Journalist: ${item.journalist_score}
-|
+&nbsp;&nbsp;|&nbsp;&nbsp;
 Confidence: ${item.confidence_score}
 </div>
 
@@ -150,8 +258,7 @@ document.getElementById("rumours").innerHTML = html;
 
 }
 
-loadRumours();
-    async function showSources(rumourId){
+async function showSources(rumourId){
 
 const { data, error } = await client
 .from('rumour_sources')
@@ -185,7 +292,10 @@ alert(text);
 
 }
 
+loadRumours();
+
 </script>
 
 </body>
 </html>
+```
