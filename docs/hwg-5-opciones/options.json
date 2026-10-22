@@ -1,0 +1,37 @@
+{
+  "A": {
+    "name": "El cañonazo",
+    "duration": 3.5,
+    "confetti": 0.05,
+    "tag": "Golpe seco + voz clara",
+    "short": "¡PUM! → voz directa"
+  },
+  "B": {
+    "name": "El rugido",
+    "duration": 4.1,
+    "confetti": 0.05,
+    "tag": "Cartucho potente + voz grave",
+    "short": "¡PUM! → 0,2 s → voz más lenta"
+  },
+  "C": {
+    "name": "El estadio",
+    "duration": 3.6,
+    "confetti": 0.67,
+    "tag": "El disparo entra al empezar GO",
+    "short": "HERE WE → ¡PUM! + GOOO"
+  },
+  "D": {
+    "name": "La firma",
+    "duration": 3.9,
+    "confetti": 0.3,
+    "tag": "Clic mecánico + estallido + voz",
+    "short": "CLIC → ¡PUM! → HERE WE GOOOO"
+  },
+  "E": {
+    "name": "El golpe premium",
+    "duration": 3.0,
+    "confetti": 0.04,
+    "tag": "Corcho corto + voz muy limpia",
+    "short": "POP → HERE WE GOOO"
+  }
+}
