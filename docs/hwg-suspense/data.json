@@ -1,0 +1,42 @@
+{
+  "A": {
+    "name": "Pausa medida",
+    "line": "HERE … WE … GOOOO",
+    "note": "La voz original de C con dos silencios cortos",
+    "goAt": 1.85,
+    "duration": 4.85,
+    "actor": "sloggoth"
+  },
+  "B": {
+    "name": "Suspense de estadio",
+    "line": "HERE …… WE ……… GOOOO",
+    "note": "Pausas largas; antes de GO empieza a crecer la grada",
+    "goAt": 2.93,
+    "duration": 5.93,
+    "actor": "sloggoth"
+  },
+  "C": {
+    "name": "Máximo suspense",
+    "line": "HERE ………… WE …………… GOOOO",
+    "note": "Silencio largo antes del cartucho, sin relleno robótico",
+    "goAt": 3.74,
+    "duration": 6.74,
+    "actor": "sloggoth"
+  },
+  "D": {
+    "name": "Golpe inmediato",
+    "line": "HERE … WE …… GOOOO",
+    "note": "Más rápido, con el estadio entrando justo al remate",
+    "goAt": 1.62,
+    "duration": 4.62,
+    "actor": "sloggoth"
+  },
+  "E": {
+    "name": "Otra voz real",
+    "line": "HERE …… WE ……… GO",
+    "note": "Otro intérprete británico; GO natural más breve",
+    "goAt": 2.62,
+    "duration": 5.62,
+    "actor": "bennstir"
+  }
+}
